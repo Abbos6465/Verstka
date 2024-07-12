@@ -1,0 +1,1 @@
+"use strict";const header = document.querySelector(".header");const headerActiveClass = "header--active"window.addEventListener('scroll', () => {	if (window.scrollY > 0) {		header.classList.add(headerActiveClass);	} else {		header.classList.remove(headerActiveClass);	}});
