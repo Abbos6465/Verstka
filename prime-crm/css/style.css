@@ -5,9 +5,15 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: "Jost", "Open Sans", sans-serif;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -42,6 +48,15 @@ ul {
 
 section {
   padding: 80px 0;
+}
+
+.main {
+  flex: 1;
+  margin-top: 107px;
+}
+.main--small {
+  max-width: 872px;
+  width: 100%;
 }
 
 .container {
@@ -220,7 +235,7 @@ section {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   transition: background-color 0.4s ease;
 }
 .header--active {
@@ -248,6 +263,83 @@ section {
 }
 .header .btn-login {
   padding: 12px 38px;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  column-gap: 50px;
+}
+
+.aside {
+  float: right;
+  position: sticky;
+  top: 100px;
+  width: 100%;
+  height: 100%;
+}
+.aside__list {
+  margin-top: 19px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 19px;
+}
+.aside__list-item {
+  padding-bottom: 23px;
+}
+.aside__list-item__link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 22px;
+  justify-content: space-between;
+}
+.aside__posts-list-item {
+  border-bottom: 1px solid #DEDEDE;
+  padding-right: 53px;
+}
+.aside__posts-list-item__img {
+  width: 100px;
+  height: 100px;
+}
+.aside__posts-list-item-title {
+  font-weight: 500;
+  line-height: 24.7px;
+}
+.aside__posts-list-item-text {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  column-gap: 15px;
+}
+.aside__posts-list-item-text span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 24.51px;
+  color: #666A82;
+}
+.aside__posts-list-item-text span.before {
+  position: relative;
+  padding-left: 15px;
+}
+.aside__posts-list-item-text span.before::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translateY(-50);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #4BE3EB;
+}
+.aside__categories-list-item:not(:last-child) {
+  border-bottom: 1.5px dashed #DEDEDE;
+}
+.aside__categories-list-item__text {
+  text-transform: uppercase;
 }
 
 .footer {
@@ -395,6 +487,10 @@ section {
   text-align: center;
 }
 
+.main-page__main {
+  padding-top: 0;
+}
+
 .banner {
   background: url("../images/blocks/banner/section-background.png") top right no-repeat #FFFFFF;
 }
@@ -421,7 +517,8 @@ section {
   column-gap: 36px;
 }
 .banner__link {
-  padding: 0;
+  background-color: transparent !important;
+  box-shadow: unset !important;
 }
 .banner__five-star {
   margin-top: 76px;
@@ -953,6 +1050,81 @@ section {
   margin-top: 18px;
   width: 100%;
   border-radius: 15px;
+}
+
+.journal {
+  background: url("../images/blocks/statistics/background-2.png") right 200px no-repeat #FFFFFF;
+}
+.journal-body {
+  margin-top: 161px;
+}
+.journal__cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+.journal__card {
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  box-shadow: 0 28px 57px 0 rgba(190, 190, 190, 0.2509803922);
+}
+.journal__card-img {
+  height: 550px;
+}
+.journal__card-body {
+  padding: 38px 32px;
+}
+.journal__card-statistics {
+  display: flex;
+  align-items: center;
+  column-gap: 28px;
+}
+.journal__card-statistic {
+  display: flex;
+  align-items: center;
+  column-gap: 9.5px;
+}
+.journal__card-statistic-icon {
+  height: 25px;
+}
+.journal__card-statistic-icon.icon-calendar {
+  width: 22.67px;
+}
+.journal__card-statistic-icon.icon-person {
+  width: 19.92px;
+}
+.journal__card-statistic-icon.icon-message {
+  width: 25px;
+}
+.journal__card-statistic-text {
+  color: #7D7D7D;
+}
+.journal__card-title {
+  margin-top: 32px;
+}
+.journal__card-text {
+  margin-top: 15px;
+  color: #7D7D7D;
+}
+.journal__card-btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 14px 42px;
+}
+.journal__navigation {
+  margin-top: 38px;
+  display: flex;
+  padding-right: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.journal__navigation-pages, .journal__navigation-page {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+.journal__navigation-page:not(.journal__navigation-page--active) {
+  color: #7D7D7D;
 }
 
 /*# sourceMappingURL=style.css.map */
