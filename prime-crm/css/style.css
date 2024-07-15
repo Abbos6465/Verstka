@@ -1347,4 +1347,54 @@ section {
   margin-top: 10px;
 }
 
+.licenses {
+  background: url("../images/blocks/statistics/background-2.png") right 220px no-repeat #FFFFFF;
+}
+.licenses__cards {
+  margin-top: 126px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 126px;
+}
+.licenses__card {
+  border: 3px dotted #DBDBDB;
+  padding: 15px;
+}
+.licenses__card, .licenses__card-body {
+  border-radius: 30px;
+}
+.licenses__card-body {
+  background-color: #F9F9F9;
+  padding: 88px 86px;
+}
+.licenses__card-title {
+  color: #1B2534;
+}
+.licenses__card-text {
+  margin-top: 17px;
+  text-transform: capitalize;
+  color: #606060;
+}
+.licenses__card-text .text-bold {
+  color: #8A6FFD;
+}
+.licenses__items {
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 38px;
+}
+.licenses__item-title {
+  font-weight: 700;
+  color: #231656;
+  font-size: 1.875rem;
+  line-height: 33px;
+}
+.licenses__item-text {
+  margin-top: 22px;
+  line-height: 30px;
+  color: #8A6FFD;
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=style.css.map */
