@@ -1126,5 +1126,17 @@ section {
 .journal__navigation-page:not(.journal__navigation-page--active) {
   color: #7D7D7D;
 }
+.journal__navigation-btn {
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+}
+.journal__navigation-btn__icon {
+  width: 8px;
+  height: 15px;
+}
+.journal__navigation-btn:hover .journal__navigation-btn__icon path {
+  stroke: #303030 !important;
+}
 
 /*# sourceMappingURL=style.css.map */
