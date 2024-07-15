@@ -217,7 +217,11 @@ section {
   cursor: pointer;
 }
 
-.app-input__input {
+.app-input {
+  position: relative;
+}
+.app-input__input, .app-textarea__textarea {
+  width: 100%;
   border: 1px solid #D3D3D3;
   border-radius: 20px;
   font-family: "Open Sans", sans-serif;
@@ -226,8 +230,73 @@ section {
   padding: 23px 15px 22px 31px;
   outline: none;
 }
-.app-input__input::placeholder {
+.app-input__input::placeholder, .app-textarea__textarea::placeholder {
   font: inherit;
+}
+.app-input__input--search {
+  padding-right: 50px;
+}
+.app-input__icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.app-textarea__textarea {
+  min-height: 270px;
+  padding: 31px 29px;
+}
+
+.app-checkbox__input {
+  display: none;
+}
+.app-checkbox__label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.79px;
+  color: #4E4E4E;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.app-checkbox__label::before, .app-checkbox__label::after {
+  content: "";
+  position: absolute;
+}
+.app-checkbox__label::before {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1.5px solid #29A0F5;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+.app-checkbox__label::after {
+  display: none;
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border: solid #0079bf;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.app-checkbox__input:checked + .app-checkbox__label::after {
+  display: block;
 }
 
 .header {
@@ -1137,6 +1206,145 @@ section {
 }
 .journal__navigation-btn:hover .journal__navigation-btn__icon path {
   stroke: #303030 !important;
+}
+
+.journal-show {
+  background-position: right top;
+}
+.journal-show__img {
+  border-radius: 30px;
+}
+.journal-show__statistics {
+  margin-top: 27px;
+}
+.journal-show__title, .journal-show__subtitle {
+  margin-top: 27px;
+}
+.journal-show__subtitle {
+  font-weight: 600;
+}
+.journal-show__title {
+  margin-top: 27px;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 47.4px;
+  color: #303030;
+  max-width: 550px;
+}
+.journal-show__text {
+  margin-top: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #606060;
+}
+.journal-show__search-input {
+  width: 100%;
+  background-color: #EAEAEA;
+  border-color: transparent;
+  padding: 19px 48px 19px 29px;
+  height: 60px;
+  border-radius: 15px;
+}
+.journal-show__search-icon {
+  width: 22px;
+  height: 22px;
+}
+.journal-show__list {
+  display: flex;
+  flex-direction: column;
+  list-style-position: inside;
+}
+.journal-show__list--disc {
+  margin-top: 31px;
+  row-gap: 22px;
+  list-style-type: disc;
+}
+.journal-show__list--disc .journal-show__list-item::marker {
+  font-size: 1rem;
+}
+.journal-show__list--decimal {
+  margin-top: 45px;
+  list-style-type: decimal;
+  row-gap: 30px;
+}
+.journal-show__list-item {
+  line-height: 30px;
+}
+.journal-show__box {
+  margin-top: 16px;
+  text-align: center;
+  background-image: linear-gradient(91.03deg, #7CE7FF -2.29%, #82FEE9 100.82%);
+  padding: 133px 32px 30px;
+  min-height: 457px;
+  border-radius: 30px;
+}
+.journal-show__box-header {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #303030;
+  color: #FFFFFF;
+  margin: 0 auto;
+  font-size: 4.375rem;
+  font-weight: 600;
+}
+.journal-show__box-body {
+  margin-top: 5px;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 30.1px;
+  color: #303030;
+}
+.journal-show__improvements {
+  margin-top: 71.6px;
+}
+.journal-show__improvements__text {
+  margin-top: 24px;
+}
+.journal-show__improvements .text, .journal-show__improvements .section-subtitle {
+  color: #606060;
+}
+.journal-show__share {
+  margin-top: 55px;
+  padding: 20px 0;
+  border-top: 1px solid #F4F2F0;
+  border-bottom: 1px solid #F4F2F0;
+}
+.journal-show__share__links, .journal-show__share {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 54px;
+}
+
+.comment {
+  margin-top: 55px;
+}
+.comment__title {
+  color: #303030;
+}
+.comment__form {
+  margin-top: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 29px 21px;
+}
+.comment__form-item {
+  width: 100%;
+}
+.comment__form-item--small {
+  width: calc((100% - 21px) / 2);
+}
+.comment__form-item .form-item__label {
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+}
+.comment__form__checkbox {
+  margin-top: 10px;
+}
+.comment__form__btn {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
